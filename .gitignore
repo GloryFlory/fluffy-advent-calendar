@@ -1,5 +1,3 @@
 node_modules
-public/scratch-media/*.mp4
-public/scratch-media/*.jpg
-public/scratch-media/*.png
-public/scratch-media/*.gif
+.vercel
+public/scratch-media/day-23.mp4
