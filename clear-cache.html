@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clear Cache</title></head>
+<body>
+<h1>Clear Calendar Cache</h1>
+<button onclick="localStorage.clear(); alert('Cache cleared! Refresh the calendar.');">Clear LocalStorage</button>
+<script>
+// Auto-clear on load
+localStorage.clear();
+document.body.innerHTML = '<h1>Cache Cleared!</h1><p>Now go back to <a href="/">the calendar</a></p>';
+</script>
+</body>
+</html>
