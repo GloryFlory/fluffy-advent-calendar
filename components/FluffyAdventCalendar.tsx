@@ -134,7 +134,10 @@ export default function FluffyAdventCalendar() {
     const door = doors.find(d => d.day === dayNumber);
     if (!door) return;
 
-    // Check if the door is unlocked
+    // TESTING MODE: All doors unlocked for testing deployment
+    const isDoorUnlocked = true;
+    
+    /* PRODUCTION MODE: Uncomment before December 1st
     const today = new Date();
     const currentMonth = today.getMonth(); // 0 = January, 11 = December
     const currentDay = today.getDate();
@@ -148,6 +151,7 @@ export default function FluffyAdventCalendar() {
     const isNextYear = today.getFullYear() > currentYear;
     
     const isDoorUnlocked = (isDecember && currentDay >= dayNumber) || isPastDecember || isNextYear;
+    */
     
     if (!isDoorUnlocked && !door.isOpen) {
       // Show a locked message
