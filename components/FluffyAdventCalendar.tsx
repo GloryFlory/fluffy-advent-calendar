@@ -179,20 +179,27 @@ export default function FluffyAdventCalendar() {
     setShowRevealedBanner(true); // Reset banner for next modal
     // Re-enable body scroll
     document.body.style.overflow = 'unset';
+    document.body.style.position = 'unset';
+    document.body.style.width = 'auto';
   };
 
   useEffect(() => {
     if (modalData) {
-      // Prevent body scroll when modal is open on desktop, allow on mobile
-      if (typeof window !== 'undefined' && window.innerWidth > 640) {
-        document.body.style.overflow = 'hidden';
-      }
+      // Prevent body scroll when modal is open on all devices
+      document.body.style.overflow = 'hidden';
+      // Also prevent touch-based scrolling on mobile
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
     } else {
       document.body.style.overflow = 'unset';
+      document.body.style.position = 'unset';
+      document.body.style.width = 'auto';
     }
     
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.style.position = 'unset';
+      document.body.style.width = 'auto';
     };
   }, [modalData]);
 
